@@ -1,0 +1,5 @@
+02. React Native Package
+
+statusBar나 asyncStorage같은 여러 api들과 컴포넌트들을 RN에서 제공했었는데,
+유지관리의 한계와, 잦은 버그등으로 인해 없애버리기 시작했고
+그로 인해, 과거의 기능들을 사용하려면 다른 곳에서 다운받아서 import하는 작업이 필요해졌다.
