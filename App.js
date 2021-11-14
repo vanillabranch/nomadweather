@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-
+/*일부컴포넌트 들을 expo에서 import 해오는 이유*/
 export default function App() {
   return (
     <View style={styles.container}>
