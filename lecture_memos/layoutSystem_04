@@ -1,0 +1,30 @@
+04. Layout System
+
+flexbox의 사용
+리액트네이티브의 플렉스박스가 웹과 어떻게 다른지에 대한 공부
+
+flexDirection은 기본값이 정해져있으며, 기본값은 column이며, row로 변경할수 있다.
+(row로 변경하는 경우 가장 바깥쪽의 View컴포넌트에 지정할수 있다.)
+※웹의 경우 flexDirection의 기본값은 row다. 모바일은 column
+
+row로 하면 화면 바깥으로 넘어가는 overflow현상이 나타날수 있는데
+RN은 브라우저가 아니기 때문에 스크롤 할수 없다.
+
+※모든 View는 flex container다. 그리고 RN의에서 flex direction의 기본값은 column이다 (not row.)
+
+너비와 높이게 기반해서 앱을 만들어서는 안된다. 스크린에서 각각 다르게 보이기 때문.
+반응에 맞게 디자인해야한다. 수많은 스크린사이즈 떄문이다.
+width , height 를 사용하지 않을것이다.
+
+flex 스타일 값으로 사이즈를 제어할수 있다. width, height필요없이, 동일하게 분배
+
+height, percent 다필요없이 flex가 중요하다.
+
+부모 view의 flex값을 기준으로 하위에 있는 flex는 부모의 n배다.
+부모가 하나 이상이 있다면? 이건 생각해볼것.
+
+display:flex할 필요가 없다. 기본 column , row로 바꿀땐 지정할것. flexDirection:"row" 이렇게
+
+
+
+
