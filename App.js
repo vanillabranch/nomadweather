@@ -1,15 +1,36 @@
+import * as Location from 'expo-location';
 import React from 'react';
+import {useState,useEffect} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
-
 const {width: SCREEN_WIDTH} = Dimensions.get("window");
 
 //console.log(SCREEN_WIDTH);
 
 export default function App() {
+    const [city, setCity] = useState();
+    const [location, setLocation] = useState();
+    const [ok , setOk] = useState(true);
+    const ask = async ()=> {
+        const {granted} = await Location.requestForegroundPermissionsAsync();
+        if(!granted){
+            setOk(false);
+        }
+
+        //현재 위치
+        //await 사용하여 api를 사용할땐, 변수명 자리를 브레이스로 감싸주면 해당하는 값을 가져와서 처리할수 있다.
+        const {coords:{latitude,longitude}} = await Location.getCurrentPositionAsync({accuracy:5});
+        Location.setGoogleApiKey("");
+        const location = await Location.reverseGeocodeAsync({latitude,longitude},{useGoogleMaps:false});
+        setCity(location[0].district);
+    };
+    useEffect(()=>{
+        ask();
+    },[]);
+
     return (
         <View style={styles.container}>
             <View style={styles.city}>
-                <Text style={styles.cityName}>Seoul</Text>
+                <Text style={styles.cityName}>{city}</Text>
             </View>
             <ScrollView
                 horizontal

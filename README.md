@@ -44,3 +44,7 @@ npm install --global expo-cli
 어마어마한 장점이 있다.  그러니 필요한 컴포넌트(사라진)들을 다운받아서 설치 후 쓰기보단 expo의 sdk를 사용하는것이 더 많은 기능을
 사용할수 있고, 유용하다.
 
+18. 사용자의 위치정보를 가져오기 위해, expo-location을 사용하자.
+    expo install expo-location 터미널에 입력.
+    
+19. 그리고 중요한거, useState와 useEffect는 React와 함께 브레이스로 import하지말것! 오류남...
